@@ -1,6 +1,7 @@
-// Import stylesheets
-import './style.css';
+import '@unlimint/client-js-sdk/js-sdk.min.js';
 
-// Write Javascript code!
-const appDiv = document.getElementById('app');
-appDiv.innerHTML = `<h1>JS Starter</h1>`;
+import './assets/styles/main.css';
+import './assets/styles/custom.css';
+import './assets/styles/modal.css';
+
+import './assets/js-sdk-demo.js';
