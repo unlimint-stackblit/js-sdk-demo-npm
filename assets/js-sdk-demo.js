@@ -11,11 +11,11 @@ function hideModal() {
 }
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
+window.onclick = function (event) {
   if (event.target === modal) {
     hideModal();
   }
-}
+};
 
 function back() {
   document.getElementById('demo-item').style.display = 'flex';
@@ -161,6 +161,8 @@ function showPayFormResultPage(data, payFormData) {
 
   [
     { title: 'Order number', value: payFormData.merchantOrder.id },
+    { title: 'Card number', value: '... 2568' },
+    { title: 'Card type', value: 'Visa' },
     { title: 'Total amount', value: payFormData.paymentData.amount + ' ' + payFormData.paymentData.currency },
   ].forEach(item => {
     const newNode = createPaymentDetail(item.title, item.value);
@@ -220,7 +222,7 @@ function openPayForm(target) {
       },
     },
     customTexts: {
-      total: 'Total: '
+      total: 'Total: ',
     },
     urls: {
       generateMobileToken: 'https://sandbox.cardpay.com/demo-merchant/mobile/generate_token',
@@ -256,9 +258,10 @@ function showPayBySavedCardFormResultPage(data, payBySavedCardFormData) {
   [
     { title: 'Order number', value: payBySavedCardFormData.merchantOrder.id },
     { title: 'Card number', value: '... ' + payBySavedCardFormData.lastDigits },
+    { title: 'Card type', value: 'Visa ' },
     {
       title: 'Total amount',
-      value: payBySavedCardFormData.paymentData.amount + ' ' + payBySavedCardFormData.paymentData.currency
+      value: payBySavedCardFormData.paymentData.amount + ' ' + payBySavedCardFormData.paymentData.currency,
     },
   ].forEach(item => {
     const newNode = createPaymentDetail(item.title, item.value);
@@ -302,7 +305,7 @@ function openPayBySavedCardForm(target) {
         title: 'unl-custom-info-title',
         total: 'unl-custom-info-total',
         order: 'unl-custom-info-order',
-        cvvInput: 'unl-custom-pay-by-saved-card-input'
+        cvvInput: 'unl-custom-pay-by-saved-card-input',
       },
       $textInput: {
         container: 'unl-custom-label-container',
@@ -316,7 +319,7 @@ function openPayBySavedCardForm(target) {
       },
     },
     customTexts: {
-      total: 'Total: '
+      total: 'Total: ',
     },
     urls: {
       generateMobileToken: 'https://sandbox.cardpay.com/demo-merchant/mobile/generate_token',
