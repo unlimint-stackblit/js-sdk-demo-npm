@@ -77,6 +77,12 @@ Processing endpoint addresses:
 
 ---
 
+Widgets allow to setup `enableRedirect` property having `true`/`false` value; false by default:
+
+- `true` - after widget's form submitting user is redirected on the next step of flow via URL provided by processing backend, but `callbacks` -> `resolve` property will be ignored
+
+---
+
 ### CardForm widget
 
 CardForm widget contains a form for bank card binding feature.
@@ -107,6 +113,7 @@ The form allows customer to fill in card's data and save (bind) it for further p
       generateMobileToken: 'https://sandbox.cardpay.com/demo-merchant/mobile/generate_token',
       cardBinding: 'https://sandbox.cardpay.com/api/mobile/cardbinding',
     },
+    enableRedirect: false,
     data: {
       recurringCurrency: 'USD',
       customer: {
@@ -163,7 +170,8 @@ PayForm widget contains a form for bank card payment feature. Form allows custom
       generateMobileToken: 'https://sandbox.cardpay.com/demo-merchant/mobile/generate_token',
       payment: 'https://sandbox.cardpay.com/api/mobile/payment',
     },
-     data: {
+    enableRedirect: false,
+    data: {
       merchantName: 'Merchant Name',
       merchantOrder: {
         description: 'description',
@@ -225,7 +233,8 @@ PayBySavedCardForm widget contains a form for payment by saved card. Form allows
       generateMobileToken: 'https://sandbox.cardpay.com/demo-merchant/mobile/generate_token',
       payment: 'https://sandbox.cardpay.com/api/mobile/payment',
     },
-     data: {
+    enableRedirect: false,
+    data: {
       token: 'aGVhZGVyLmFjY2Vzc190b2tlbl9ib2R5LnNpZ25hdHV',
       lastDigits: '0002',
       merchantName: 'Merchant Name',
