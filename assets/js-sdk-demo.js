@@ -88,10 +88,12 @@ function showCardFormResultPage(data) {
 
   if (data?.status === 200) {
     document.getElementById('success-label').style.display = 'flex';
-    document.getElementById('result-status-text').innerText = 'Your card has been successfully linked';
+    document.getElementById('result-status-text').innerText =
+      'Your card has been successfully linked';
   } else {
     document.getElementById('declined-label').style.display = 'flex';
-    document.getElementById('result-status-text').innerText = 'Your card was not linked';
+    document.getElementById('result-status-text').innerText =
+      'Your card was not linked';
   }
 }
 
@@ -119,7 +121,8 @@ function openCardForm(target) {
       },
     },
     urls: {
-      generateMobileToken: 'https://sandbox.cardpay.com/demo-merchant/mobile/generate_token',
+      generateMobileToken:
+        'https://sandbox.cardpay.com/demo-merchant/mobile/generate_token',
       cardBinding: 'https://sandbox.cardpay.com/api/mobile/cardbinding',
     },
     data: {
@@ -163,8 +166,12 @@ function showPayFormResultPage(data, payFormData) {
     { title: 'Order number', value: payFormData.merchantOrder.id },
     { title: 'Card number', value: '... 2568' },
     { title: 'Card type', value: 'Visa' },
-    { title: 'Total amount', value: payFormData.paymentData.amount + ' ' + payFormData.paymentData.currency },
-  ].forEach(item => {
+    {
+      title: 'Total amount',
+      value:
+        payFormData.paymentData.amount + ' ' + payFormData.paymentData.currency,
+    },
+  ].forEach((item) => {
     const newNode = createPaymentDetail(item.title, item.value);
     document.getElementById('payment-info').appendChild(newNode);
   });
@@ -225,7 +232,8 @@ function openPayForm(target) {
       total: 'Total: ',
     },
     urls: {
-      generateMobileToken: 'https://sandbox.cardpay.com/demo-merchant/mobile/generate_token',
+      generateMobileToken:
+        'https://sandbox.cardpay.com/demo-merchant/mobile/generate_token',
       payment: 'https://sandbox.cardpay.com/api/mobile/payment',
     },
     data: payFormData,
@@ -261,9 +269,12 @@ function showPayBySavedCardFormResultPage(data, payBySavedCardFormData) {
     { title: 'Card type', value: 'Visa ' },
     {
       title: 'Total amount',
-      value: payBySavedCardFormData.paymentData.amount + ' ' + payBySavedCardFormData.paymentData.currency,
+      value:
+        payBySavedCardFormData.paymentData.amount +
+        ' ' +
+        payBySavedCardFormData.paymentData.currency,
     },
-  ].forEach(item => {
+  ].forEach((item) => {
     const newNode = createPaymentDetail(item.title, item.value);
     document.getElementById('payment-info').appendChild(newNode);
   });
@@ -279,7 +290,7 @@ function showPayBySavedCardFormResultPage(data, payBySavedCardFormData) {
 
 function openPayBySavedCardForm(target) {
   const payBySavedCardFormData = {
-    token: 'a3d85ac0-4268-bb12-a628-f1e13a4988d8',
+    token: 'e51745bb-1865-5ceb-f20c-ade2c7a4f70e',
     lastDigits: '0002',
     merchantName: 'Merchant Name',
     merchantOrder: {
@@ -322,7 +333,8 @@ function openPayBySavedCardForm(target) {
       total: 'Total: ',
     },
     urls: {
-      generateMobileToken: 'https://sandbox.cardpay.com/demo-merchant/mobile/generate_token',
+      generateMobileToken:
+        'https://sandbox.cardpay.com/demo-merchant/mobile/generate_token',
       payment: 'https://sandbox.cardpay.com/api/mobile/payment',
     },
     data: payBySavedCardFormData,
