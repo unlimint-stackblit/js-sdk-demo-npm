@@ -3,6 +3,6 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@unlimint/client-js-sdk": "^2.10.0"
+    "@unlimint/client-js-sdk": "^2.11.0"
   }
 }
