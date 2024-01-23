@@ -104,27 +104,27 @@ declare namespace Unlimint.JsSDK {
 
   interface CardFormCustomTexts {
     title?: string;
-    'card-number.label'?: string;
-    'expiry-date.label'?: string;
-    'cvv2-cvc2.label'?: string;
+    'card-number.label'?: string; // eslint-disable-line
+    'expiry-date.label'?: string; // eslint-disable-line
+    'cvv2-cvc2.label'?: string; // eslint-disable-line
     submit?: string;
   }
 
   interface PayFormCustomTexts {
     total?: string;
     order?: string;
-    'card-number.label'?: string;
-    'expiry-date.label'?: string;
-    'cvv2-cvc2.label'?: string;
-    'save-card.label'?: string;
+    'card-number.label'?: string; // eslint-disable-line
+    'expiry-date.label'?: string; // eslint-disable-line
+    'cvv2-cvc2.label'?: string; // eslint-disable-line
+    'save-card.label'?: string; // eslint-disable-line
     submit?: string;
   }
 
   interface PayBySavedCardFormCustomTexts {
     total?: string;
     order?: string;
-    'card-number.label'?: string;
-    'cvv2-cvc2.label'?: string;
+    'card-number.label'?: string; // eslint-disable-line
+    'cvv2-cvc2.label'?: string; // eslint-disable-line
     submit?: string;
   }
 
